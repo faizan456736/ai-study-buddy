@@ -3,7 +3,7 @@ import google.generativeai as genai
 import PyPDF2
 
 # Configure Gemini API (from Streamlit Cloud Secrets)
-genai.configure(api_key=st.secrets[GEMINI_API_KEY])
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.set_page_config(page_title="📚 AI Study Buddy", layout="wide")
@@ -55,3 +55,4 @@ elif menu == "Quiz Generator":
         else:
 
             st.warning("Please paste notes first.")
+
