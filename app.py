@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
-import PyPDF2
+import os
 
 # Configure Gemini API (from Streamlit Cloud Secrets)
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
@@ -21,7 +21,7 @@ if menu == "Topic Explainer":
         if topic:
             with st.spinner("Explaining..."):
                 response = model.generate_content(f"Explain {topic} in simple terms for students.")
-                st.success(response.text)
+                st.write(response.text)
         else:
             st.warning("Please enter a topic.")
 
@@ -55,6 +55,7 @@ elif menu == "Quiz Generator":
         else:
 
             st.warning("Please paste notes first.")
+
 
 
 
