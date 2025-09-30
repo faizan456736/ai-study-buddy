@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
-import pyPDF2
+import os
 
 # Configure Gemini API (from Streamlit Cloud Secrets)
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
@@ -55,6 +55,7 @@ elif menu == "Quiz Generator":
         else:
 
             st.warning("Please paste notes first.")
+
 
 
 
